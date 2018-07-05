@@ -1,0 +1,36 @@
+# Privilegios para `t_access`@`localhost`
+
+GRANT SELECT ON *.* TO 't_access'@'localhost' IDENTIFIED BY PASSWORD '*00A51F3F48415C7D4E8908980D443C29C69B60C9';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `bdnext\_u`.* TO 't_access'@'localhost';
+
+GRANT ALL PRIVILEGES ON `transporte_db`.* TO 't_access'@'localhost';
+
+
+# Privilegios para `t_create_user`@`localhost`
+
+GRANT USAGE ON *.* TO 't_create_user'@'localhost' IDENTIFIED BY PASSWORD '*6B5EDDE567F4F29018862811195DBD14B8ADDD2A';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON `bdnext\_u`.* TO 't_create_user'@'localhost';
+
+
+# Privilegios para `t_general`@`localhost`
+
+GRANT SELECT ON *.* TO 't_general'@'localhost' IDENTIFIED BY PASSWORD '*00A51F3F48415C7D4E8908980D443C29C69B60C9';
+
+GRANT SELECT ON `transporte\_db`.* TO 't_general'@'localhost';
+
+GRANT SELECT ON `bdnext\_u`.* TO 't_general'@'localhost';
+
+GRANT SELECT (psw, email, nombre, id) ON `transporte_db`.`usuarios` TO 't_general'@'localhost';
+
+
+# Privilegios para `user_prueba`@`localhost`
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, FILE, INDEX, ALTER, CREATE TEMPORARY TABLES, EXECUTE, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, EVENT, TRIGGER ON *.* TO 'user_prueba'@'localhost' IDENTIFIED BY PASSWORD '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9';
+
+GRANT SELECT ON `transporte\_db`.* TO 'user_prueba'@'localhost';
+
+GRANT ALL PRIVILEGES ON `prueba`.* TO 'user_prueba'@'localhost';
+
+GRANT SELECT (psw, id, nombre) ON `transporte_db`.`usuarios` TO 'user_prueba'@'localhost';
